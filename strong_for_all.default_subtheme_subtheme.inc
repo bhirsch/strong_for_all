@@ -1,0 +1,560 @@
+<?php
+
+/**
+ * Implementation of hook_default_subtheme_subtheme().
+ */
+function strong_for_all_default_subtheme_subtheme() {
+  $export = array();
+  $subtheme = new stdClass;
+  $subtheme->disabled = FALSE; /* Edit this to true to make a default subtheme disabled initially */
+  $subtheme->api_version = 1;
+  $subtheme->name = 'strongforall';
+  $subtheme->title = 'StrongForAll.Org';
+  $subtheme->description = 'Custom visual design for strongforall.org (base theme: strongforall; all custom CSS, no mtheme elements incorporated)';
+  $subtheme->selectors = array();
+  $subtheme->grps = array();
+  $subtheme->custom_css = '/* site wide */
+  body
+  {
+    font-family: Georgia,"Times New Roman",Times,serif;
+    font-size: 12px;
+  }
+
+  p
+  {
+    color: #282323;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  .mainbody
+  {
+    margin-top: 187px;
+    background: #fefdf2;
+  }
+
+  .ftrwrpr
+  {
+    background: #fefdf2; 
+    height: 100%;
+    width: 100%
+    min-height: 315px;
+    padding: 15px 0;
+    margin: 0 0 0 0;
+    float: right;
+    width: 996px;
+  }
+
+  .subftrwrpr
+  {
+    background: none;
+  }
+
+  .gridwrpr
+  {
+    background: none;
+  }
+
+  /* header wrapper. distance from top of screen to bottom of main menu / header */
+  .hdrwrpr 
+  {
+   	margin-top: -187px;
+   	height: 180px;
+	background: #fefdf2; 
+    position: fixed;
+    width: 996px;
+    z-index: 100;
+      /* for IE */
+  filter:alpha(opacity=95);
+  /* CSS3 standard */
+  opacity:0.95;
+  }
+  }
+  ul#topnav
+  {
+    top: 75px;
+  }
+
+  /* secondary menu. distance from top of screen to top of menu */
+  .hdrupdtwrpr
+  {
+    top: 40px;
+  }
+
+  /* site name */
+  .hdrttl
+  {
+    visibility: hidden;
+  }
+
+  /* american flag */
+  .hdrflag
+  {
+    visibility: hidden;
+  }
+
+  ul#topnav 
+  {
+    
+  }
+
+  /** Primary menu items: Set individual widths by id **/ 
+    /* e.g.
+    #topnav li#issues
+    { 
+    }
+    // */
+
+  /** Secondary menu items */
+  #secondary a
+  {
+    color: #282323;
+    text-transform: uppercase;
+    font-family: arial;
+    font-size: 14px;
+  }
+  
+  #secondary ul.links {
+margin-bottom: 10px;
+}
+
+/* blocks */
+  h3.modttlred
+  {
+    border-bottom: 8px solid #282323;
+    color: #282323;
+    font-family: arial;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 19px;
+    letter-spacing: 0px;
+  }
+
+  /* Block header size */
+  h3.modhdgblue 
+  {
+    font-size: 18px;
+  }
+
+  /* recent posts */
+  .view-id-recent_posts .dateln
+  {
+    color: #282323;
+    font-family: arial;
+    font-size: 10px;
+    text-transform: uppercase;
+  }
+
+/* Link color */
+  h3.modhdgblue a, h3.modhdgblue a:link, h3.modhdgblue a:visited
+  {
+    color: #1d354e;  
+  }
+
+/* front page main */
+  /* title */
+  .view-front-page-main h2
+  {
+    visibility: hidden;  
+  }
+  /* text */
+  .view-front-page-main .content 
+  {
+    margin-top: -30px;
+    font-family: georgia; font-size: 25px; line-height: 30px;
+  }
+  
+
+  /* footer */
+  #footer
+  {
+    border-top: 8px solid #282323;
+    padding-top:20px;
+  }
+  /* hide footer breadcrumb area */
+  .bcrumbwrpr
+  {
+    display:none;
+  }
+
+/* Left Sidebar Blocks */
+#left_col
+{
+  padding-left: 0;
+  margin-right: 20px;
+}
+
+#left_col .block
+{
+  width: 165px;
+}
+
+#left_col h3.modttlblue
+/*#block-views-issues_nav-block_1 h3.modttlblue */
+{
+  text-transform: uppercase;
+  letter-spacing: 0px;
+  color: #282323;
+  border-bottom: 8px solid #282323;
+  font-family: arial;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#left_col h3.modhdgblue a
+{
+  text-transform: none;
+  color: #282323;
+  font-family: arial;
+  font-size: 13px;
+  line-height: 17px;
+}
+
+/* Page */
+#header
+  {
+    margin: -7px;
+  }
+
+  h1#page-title
+  {
+	margin-top: -30px;
+  	font-size: 19px;
+    color: #282323;
+    text-transform: uppercase;
+    border-bottom: #282323 solid 8px;
+    font-family: arial;
+    font-weight: bold;
+  }
+
+  h1#page-title.issue-title
+  {
+    color: #880000;
+    text-transform: none;
+    border-bottom: none;
+    font-family: Georgia,"Times New Roman",Times,serif;
+    font-weight: normal;
+  }
+
+/* Views */
+
+  /* Title */
+  .views-field-title h1.modhdgblue a
+  {
+    color: #1d354e;
+    font-size: 125%;
+  }
+  .views-field-field-teaser-value
+  {
+    font-family: Georgia,"Times New Roman",Times,serif;
+    font-size: 125%;
+  }
+
+  /* Events */
+  div.event-list-title a
+  {
+    font-family: Georgia,"Times New Roman",Times,serif;
+    color: #1d354e;
+  }
+
+  div.event-list-teaser
+  {
+    color: #282323; 
+  }
+
+  .recent-event-dateln
+  {
+    color: #666666;
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+
+  .view-events-list thead th,
+  .view-events-upcoming-list thead th,
+  .view-events-past-list thead th
+  {
+    background-color: #282323;
+  }
+
+  .view-events-list thead th a,
+  .view-events-upcoming-list thead th a,
+  .view-events-past-list thead th a
+  {
+    color: white;
+    padding-left: 10px;
+  }
+
+  .view-events-list tr,
+  .view-events-upcoming-list tr,
+  .view-events-past-list tr
+  {
+    border-bottom: #282323 8px solid;
+  }
+
+  .view-events-list td,
+  .view-events-upcoming-list td,
+  .view-events-past-list td
+  {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 15px;
+  }
+
+  .views-field-field-event-date-value
+  {
+    font-family: arial;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  /* front page slideshow, slideshow_panoramic_4 */
+  #block-views-slideshow_panoramic_4-block_4
+  {
+    border-bottom: 8px solid #282323;
+  }
+  #block-views-slideshow_panoramic_4-block_4 .block-inner
+  {
+  margin-bottom: 20px;
+  }
+
+  /* Blog */
+  .blog-date
+  {
+    display: none;
+  }
+
+  /* Coalition */
+  .coalition-member{
+    border-top: solid 8px black;
+    padding-top: 15px;
+  }
+
+  .coalition-member-logo{
+    float:left;
+    width: 175px;
+  }
+
+  .coalition-member-content{
+    float:left;
+    margin-left: 10px;
+    width: 410px;
+  }
+
+  h2.coalition-member-title{
+    color: black;
+    font-size: 25px;
+    font-family: Georgia,"Times New Roman",Times,serif;
+    margin-bottom: 0;
+  }
+
+  .coalition-member-website {
+    margin-bottom: 15px;
+  }
+
+  .coalition-member-website a{
+    font-size: 18px;
+    color: #1D354E;
+  }
+
+  .coalition-member-about{
+  }
+
+
+/* Primary Menu */
+
+/* #navbar a, */
+/* #navbar a:hover, */
+/* ul#topnav li a, */
+
+ul#topnav {width: 25%; margin-left: 690px;}
+ul#topnav li {float:none; list-style-type:none; top:25%; position:relative; display:list-item; }
+
+ul#topnav li a, 
+ul#topnav li a:hover  
+{
+  border:none;
+  background:none;
+  font-family: arial;
+  font-weight: bold;
+  padding: 2px;
+  text-align:left;
+  text-transform: uppercase;
+}
+ul#topnav li a:hover  { text-decoration: underline; }
+
+
+#topnav li#state-budget
+{
+border-left: none;
+}
+
+#topnav li#state-budget a,
+#topnav li#state-budget a:hover
+{
+color: #114b69;
+}
+
+#topnav li#millionaires-tax
+{
+border-left: none;
+}
+
+#topnav li#millionaires-tax a,
+#topnav li#millionaires-tax a:hover
+{
+color: #8b2d08;
+}
+
+#topnav li#jobs-for-all
+{
+border-left: none;
+}
+
+#topnav li#jobs-for-all a,
+#topnav li#jobs-for-all a:hover
+{
+color: #0b5444;
+}
+
+#topnav li#banks-and-foreclosures
+{
+border-left: none;
+}
+
+#topnav li#banks-and-foreclosures a,
+#topnav li#banks-and-foreclosures a:hover
+{
+color: #c9650d;
+}
+
+#topnav li#wages-and-healthcare
+{
+border-left: none;
+}
+
+#topnav li#wages-and-healthcare a,
+#topnav li#wages-and-healthcare a:hover
+{
+color: #4e0f6e;
+}
+
+/* from teddy */
+
+strong, em, b, i, .bold {
+    font-family: Georgia;
+}
+
+#left_col div {
+    float: none;
+    padding: 0px;
+}
+
+#left_col {
+    line-height: 1.2em;
+}
+
+#content ul {
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+#content li {
+    margin-top: -5px;
+    font-style: italic;
+    padding: 0;
+}
+
+#content {
+    float: left;
+    padding: 25px 0 0 0;
+    width: 455px;
+}
+
+ul#topnav li a, ul#topnav li a:hover {
+  border: none;
+  background: none;
+  font-family: arial;
+  font-weight: bold;
+  padding: 0px 0 0 0;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.mod-hdr h3.modhdgred, h3.modhdgblue, h3.modhdgwhite {
+  font-size: 18px;
+  margin: 10px 0 0;
+  padding: 0;
+}
+
+ul#topnav li a, ul#topnav li a:hover {
+  background: none repeat scroll 0 0 transparent;
+  border: medium none;
+  font-family: arial;
+  font-size: 10px;
+  font-weight: bold;
+  margin-top: 0px;
+  letter-spacing: 1px;
+  margin-left: -16px;
+  padding: 0.5px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.view-id-recent_posts .dateln {
+  color: #5c5b56;
+  font-family: arial;
+  font-size: 10px;
+  text-transform: uppercase;
+  margin-bottom:  -15px;
+}
+
+#secondary a {
+  color: #282323;
+  font-family: arial;
+  font-size: 14px;
+  margin-left: 4px;
+  text-transform: uppercase;
+  font-weight:  bold;
+}
+
+#right-col {
+  background: url("css/assets/templates/right_top_back.gif") no-repeat scroll 0 0 transparent;
+  float: right;
+  line-height: 1.5em;
+  margin: -20px -20px 0 40px;
+  min-height: 400px;
+  padding: 15px;
+  width: 292px;
+}
+
+.view-button-block div.views-row {
+  padding: 0;
+  margin: 0px 0px 0px -2px;
+}
+
+#right-col{
+  background: url(/profiles/civic/themes/strongforall/css/assets/templates/right_top_back.gif)
+  no-repeat scroll 0 0 transparent;
+  float: right;
+  line-height: 1.5em;
+  margin: -20px -15px 0px 40px;
+  min-height: 400px;
+  padding: 15px;
+  width: 288px;
+}
+
+#right-col .block {
+  margin-bottom: 30px;
+}
+
+.sefa-front-page-main {
+  font-size: 27px;
+  line-height: 32px;
+}';
+  $subtheme->is_active = 1;
+
+  $export['strongforall'] = $subtheme;
+  return $export;
+}
